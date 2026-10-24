@@ -5,7 +5,7 @@
   "dependencies": {
     "@blueprintjs/core": "^3.54.0",
     "mobx": "^5.15.7",
-    "mobx-react-lite": "^1.5.2",
+    "mobx-react-lite": "^2.2.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "stylus": "^0.54.8",
