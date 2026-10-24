@@ -50,3 +50,7 @@ You can find example file in this link:
 - [React](https://reactjs.org/)
 - [Mobx](https://mobx.js.org/) & [Mobx React Lite](https://mobx-react.js.org/)
 - [Blueprint](https://blueprintjs.com/)
+
+## Development
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for the current runtime, builds and checks.

@@ -1,34 +1,32 @@
 {
   "name": "parser",
   "license": "MIT",
-  "homepage": ".",
   "dependencies": {
-    "@blueprintjs/core": "^3.28.1",
-    "mobx": "^5.15.4",
+    "@blueprintjs/core": "^3.54.0",
+    "mobx": "^5.15.7",
     "mobx-react-lite": "^1.5.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "@blueprintjs/icons": "^3.33.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "type": "module",
+  "packageManager": "pnpm@12.14.0",
+  "engines": {
+    "node": ">=24 <27",
+    "pnpm": ">=12 <13"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-react-swc": "^4.3.3",
+    "happy-dom": "^21.0.4",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   }
 }

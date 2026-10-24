@@ -24,3 +24,5 @@ yarn-error.log*
 
 # vsc
 .vscode
+/dist/
+/node_modules/
