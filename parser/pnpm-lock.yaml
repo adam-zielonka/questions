@@ -176,8 +176,8 @@ importers:
         specifier: ^5.15.7
         version: 5.15.7
       mobx-react-lite:
-        specifier: ^1.5.2
-        version: 1.5.2(mobx@5.15.7)(react@16.14.0)
+        specifier: ^2.2.2
+        version: 2.2.2(mobx@5.15.7)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       react:
         specifier: ^16.14.0
         version: 16.14.0
@@ -708,11 +708,18 @@ packages:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
 
-  mobx-react-lite@1.5.2:
-    resolution: {integrity: sha512-PyZmARqqWtpuQaAoHF5pKX7h6TKNLwq6vtovm4zZvG6sEbMRHHSqioGXSeQbpRmG8Kw8uln3q/W1yMO5IfL5Sg==}
+  mobx-react-lite@2.2.2:
+    resolution: {integrity: sha512-2SlXALHIkyUPDsV4VTKVR9DW7K3Ksh1aaIv3NrNJygTbhXe2A9GrcKHZ2ovIiOp/BXilOcTYemfHHZubP431dg==}
     peerDependencies:
       mobx: ^4.0.0 || ^5.0.0
       react: ^16.8.0
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
 
   mobx@5.15.7:
     resolution: {integrity: sha512-wyM3FghTkhmC+hQjyPGGFdpehrcX1KOXsDuERhfK2YbJemkUhEB+6wzEN639T21onxlfYBmriA1PFnvxTUhcKw==}
@@ -1359,10 +1366,12 @@ snapshots:
 
   math-intrinsics@1.1.0: {}
 
-  mobx-react-lite@1.5.2(mobx@5.15.7)(react@16.14.0):
+  mobx-react-lite@2.2.2(mobx@5.15.7)(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
     dependencies:
       mobx: 5.15.7
       react: 16.14.0
+    optionalDependencies:
+      react-dom: 16.14.0(react@16.14.0)
 
   mobx@5.15.7: {}
 
