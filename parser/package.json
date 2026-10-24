@@ -2,7 +2,7 @@
   "name": "parser",
   "license": "MIT",
   "dependencies": {
-    "@blueprintjs/core": "^3.54.0",
+    "@blueprintjs/core": "^4.9.1",
     "mobx": "^5.15.7",
     "mobx-react-lite": "^1.5.2",
     "react": "^16.14.0",
