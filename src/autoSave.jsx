@@ -1,5 +1,5 @@
 import { autorun } from 'mobx'
-import { hashCode, parseQuestion } from './utils/Utils.js'
+import { hashCode, parseQuestion } from './utils/Utils.jsx'
 import QUESTIONS from './assets/questions.json'
 
 const STORAGE_QUESTIONS = 'questions'
