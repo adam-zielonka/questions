@@ -17,7 +17,7 @@ export function parseQuestion(text) {
 }
 
 export function parseFromTXT(text) {
-  const array = text.split('\r\n')
+  const array = text.split(/\r?\n/)
   const result = []
   let last
   for (const line of array) {

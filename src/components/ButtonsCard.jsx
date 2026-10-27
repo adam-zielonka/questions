@@ -2,58 +2,42 @@ import React, { useState } from 'react'
 import { observer } from 'mobx-react-lite'
 import FileLoader from './FileLoader'
 import { Button, Alert, Intent } from '@blueprintjs/core'
-import Card from './Card'
 import { useStore } from '../Store'
 
 export const FiltersCard = observer(() => {
-  const { filters, downloadDanger } = useStore()
-
-  if(!filters.buttons) return ''
-
-  return <Card>
-    <Button text={'Easy'} active={filters.hidden} onClick={() => filters.hidden = !filters.hidden} />
-    <Button text={'Normal'} active={filters.others} onClick={() => filters.others = !filters.others} />
-    <Button text={'Danger'} active={filters.danger} onClick={() => filters.danger = !filters.danger} />
-    <br />
-    <Button text={'Download Danger'} icon='download' onClick={downloadDanger} />
-  </Card>
+  const { filters, setFilter, downloadDanger, stats } = useStore()
+  if(!filters.buttons) return null
+  return <section id="question-filters" className="filter-panel" aria-label="Filter questions">
+    <span className="filter-label">Include difficulty</span>
+    <div className="filter-options">
+      <Button text={`Easy · ${stats.hidden}`} active={filters.hidden} aria-pressed={filters.hidden} onClick={() => setFilter('hidden')}/>
+      <Button text={`Normal · ${stats.all - stats.hidden - stats.danger}`} active={filters.others} aria-pressed={filters.others} onClick={() => setFilter('others')}/>
+      <Button text={`Difficult · ${stats.danger}`} active={filters.danger} aria-pressed={filters.danger} onClick={() => setFilter('danger')}/>
+    </div>
+    <Button className="export-button" minimal text="Export difficult" icon="download" disabled={!stats.danger} onClick={downloadDanger}/>
+  </section>
 })
 
 function ButtonsCard() {
-  const { settings, resetQuestions, setFilters, filters, shuffleQuestion } = useStore()
-
-  const [alert, setAlert] = useState(false)
-  const [alert2, setAlert2] = useState(false)
-
-  return <Card>
-    <FileLoader/>
-    <Button text='Reset' icon='reset' onClick={() => setAlert(true)} />
-    <Button text='List' icon='list' onClick={() => settings.showAll = !settings.showAll} active={settings.showAll} />
-    <Alert
-      cancelButtonText="Cancel"
-      confirmButtonText="Clear"
-      icon="trash"
-      intent={Intent.DANGER}
-      isOpen={alert}
-      onCancel={() => setAlert(false)}
-      onConfirm={() => {resetQuestions(); setAlert(false)}}
-      canEscapeKeyCancel
-      canOutsideClickCancel
-    >Are you sure to clear your progress?</Alert>
-    <Button icon='filter' onClick={setFilters} active={filters.buttons} intent={(filters.others && filters.hidden && filters.danger) ? 'none' : 'success'} />
-    <Button icon='refresh' text="Shuffle" onClick={() => setAlert2(true)}  />
-    <Alert
-      cancelButtonText="Cancel"
-      confirmButtonText="Shuffle"
-      icon="trash"
-      intent={Intent.DANGER}
-      isOpen={alert2}
-      onCancel={() => setAlert2(false)}
-      onConfirm={() => {shuffleQuestion(); setAlert2(false)}}
-      canEscapeKeyCancel
-      canOutsideClickCancel
-    >Are you sure to shuffle questions?</Alert>
-  </Card>
+  const { settings, resetQuestions, setFilters, filters, shuffleQuestion, length } = useStore()
+  const [dialog, setDialog] = useState(null)
+  const filtered = !(filters.others && filters.hidden && filters.danger)
+  return <div className="toolbar">
+    <div className="view-switch" role="group" aria-label="Question view">
+      <Button icon="learning" text="Practice" active={!settings.showAll} aria-pressed={!settings.showAll} onClick={() => settings.showAll = false}/>
+      <Button icon="list" text="All questions" active={settings.showAll} aria-pressed={settings.showAll} onClick={() => settings.showAll = true}/>
+    </div>
+    <div className="toolbar-actions">
+      <Button icon="filter" text={filtered ? 'Filters · active' : 'Filters'} active={filters.buttons} aria-expanded={filters.buttons} aria-controls="question-filters" onClick={setFilters}/>
+      <Button icon="random" text="Shuffle" disabled={length < 2} onClick={() => setDialog('shuffle')}/>
+      <Button icon="reset" text="Reset" disabled={!length} onClick={() => setDialog('reset')}/>
+      <FileLoader/>
+    </div>
+    <Alert cancelButtonText="Cancel" confirmButtonText={dialog === 'reset' ? 'Reset answers' : 'Shuffle questions'} icon={dialog === 'reset' ? 'reset' : 'random'} intent={dialog === 'reset' ? Intent.DANGER : Intent.PRIMARY} isOpen={dialog !== null} onCancel={() => setDialog(null)} onConfirm={() => { dialog === 'reset' ? resetQuestions() : shuffleQuestion(); setDialog(null) }} canEscapeKeyCancel canOutsideClickCancel>
+      <h3>{dialog === 'reset' ? 'Start a fresh attempt?' : 'Change the question order?'}</h3>
+      <p>{dialog === 'reset' ? 'Your answers and results will be cleared. Your questions and difficulty labels will stay.' : 'Questions will appear in a new, random order. Your answers and progress will stay.'}</p>
+    </Alert>
+  </div>
 }
 
 export default observer(ButtonsCard)

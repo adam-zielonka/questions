@@ -10,6 +10,7 @@ export class Store {
     this.questions = []
     this.settings = { showAll: false }
     this.filters = { buttons: false, hidden: true, danger: true, others: true }
+    this.checkVisibility = this.checkVisibility.bind(this)
     autoSave(this)
   }
 
@@ -38,23 +39,30 @@ export class Store {
   }
 
   setNextIndex() {
-    const index = this.index
-    let newIndex = index
-    do {
-      newIndex = newIndex + 1 === this.questions.length ? 0 : newIndex + 1
-      if(this.checkVisibility(this.questions[newIndex])) break
-    } while(index !== newIndex)
-    this.setIndex(newIndex)
+    this.navigate(1)
   }
 
   setBackIndex() {
-    const index = this.index
-    let newIndex = index
-    do {
-      newIndex = newIndex === 0 ? this.questions.length - 1 : newIndex - 1
-      if(this.checkVisibility(this.questions[newIndex])) break
-    } while(index !== newIndex)
-    this.setIndex(newIndex)
+    this.navigate(-1)
+  }
+
+  navigate(direction) {
+    const visible = this.filteredQuestions
+    if(!visible.length) return
+    const current = visible.indexOf(this.questions[this.index])
+    const next = current < 0 ? 0 : (current + direction + visible.length) % visible.length
+    this.setIndex(this.questions.indexOf(visible[next]))
+  }
+
+  setFilter(name) {
+    this.filters[name] = !this.filters[name]
+    this.ensureVisibleQuestion()
+  }
+
+  ensureVisibleQuestion() {
+    if(this.filteredQuestions.length && !this.checkVisibility(this.questions[this.index])) {
+      this.setIndex(this.questions.indexOf(this.filteredQuestions[0]))
+    }
   }
 
   setHidden(question) {
@@ -63,6 +71,7 @@ export class Store {
       found.hidden = !found.hidden
       if(found.hidden)
         found.danger = false
+      this.ensureVisibleQuestion()
     }
   }
 
@@ -72,6 +81,7 @@ export class Store {
       found.danger = !found.danger
       if(found.danger)
         found.hidden = false
+      this.ensureVisibleQuestion()
     }
   }
 
@@ -105,11 +115,19 @@ export class Store {
   }
 
   loadQuestions(text) {
+    const parsed = parseQuestion(text)
+    if(!Array.isArray(parsed) || !parsed.length || parsed.some(q =>
+      typeof q.question !== 'string' || !q.question.trim() || !Array.isArray(q.answers) || !q.answers.length ||
+      q.answers.some(a => typeof a.value !== 'string' || typeof a.correct !== 'boolean')
+    )) {
+      throw new Error('This file has no valid questions. Choose a quiz JSON or TXT file.')
+    }
     this.questions.clear()
-    this.questions.push(...parseQuestion(text).map(q => {
+    this.questions.push(...parsed.map(q => {
       if(!q.hash) q.hash = hashCode(JSON.stringify({q: q.question, a: q.answers}))
       return q
     }))
+    this.filters.hidden = this.filters.danger = this.filters.others = true
     this.setIndex(0)
   }
 
@@ -131,10 +149,12 @@ decorate(Store, {
   length: computed,
   stats: computed,
   index: computed,
-  checkVisibility: action.bound,
   filteredQuestions: computed,
   setNextIndex: action.bound,
   setBackIndex: action.bound,
+  navigate: action.bound,
+  setFilter: action.bound,
+  ensureVisibleQuestion: action.bound,
   setHidden: action.bound,
   setDanger: action.bound,
   setFilters: action.bound,
