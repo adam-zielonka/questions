@@ -114,7 +114,13 @@ h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 43px; font-weigh
 .question-sidebar { position: sticky; top: 20px; }
 .map-card { padding: 20px; }
 .question-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(37px, 1fr)); gap: 7px; max-height: 360px; overflow-y: auto; padding: 4px; margin: -4px; }
-.App .question-number { min-height: 39px; padding: 8px 2px; font-variant-numeric: tabular-nums; background: #f6f7f2; }
+.App .question-number { min-height: 48px; padding: 5px 2px; font-variant-numeric: tabular-nums; background: #f6f7f2; }
+.question-number > .bp3-button-text { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 0; }
+.question-index { overflow-wrap: anywhere; max-width: 100%; }
+.question-state { display: inline-flex; justify-content: center; align-items: center; flex-shrink: 0; width: 1em; height: 1em; font-size: 14px; font-weight: 700; line-height: 1; }
+.map-legend .question-state.correct { color: #2d624a; }
+.map-legend .question-state.incorrect { color: #a33f37; }
+.map-legend .question-state.unanswered { color: #435348; }
 .App .question-number.correct { background: #e8f2e5; border-color: #b8d0b5; color: #2d624a; }
 .App .question-number.incorrect { background: #fcece8; border-color: #e6c2b9; color: #a33f37; }
 .App .question-number.bp3-active { outline: 2px solid var(--green); outline-offset: 1px; border-color: var(--green); font-weight: 700; }

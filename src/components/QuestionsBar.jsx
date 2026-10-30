@@ -4,13 +4,16 @@ import { Button, Icon } from '@blueprintjs/core'
 import { isCorrect } from '../utils/Utils'
 import { useStore } from '../Store'
 
+const stateSymbols = { correct: '✓', incorrect: '×', unanswered: '—' }
+const StateSymbol = ({ state }) => <span className={`question-state ${state}`} aria-hidden="true">{stateSymbols[state]}</span>
+
 const QuestionButton = observer(({ question }) => {
   const { questions, index: selectedIndex, filteredQuestions, setIndex, settings } = useStore()
   const index = questions.indexOf(question)
   const selected = filteredQuestions.includes(questions[selectedIndex]) ? questions[selectedIndex] : filteredQuestions[0]
   const active = !settings.showAll && selected === question
   const state = question.answered ? (isCorrect(question) ? 'correct' : 'incorrect') : 'unanswered'
-  return <Button className={`question-number ${state}`} text={index + 1} active={active} aria-current={active ? 'step' : undefined} aria-label={`Question ${index + 1}, ${state === 'incorrect' ? 'incorrect answer' : state}`} onClick={() => {
+  return <Button className={`question-number ${state}`} text={<><span className="question-index">{index + 1}</span><StateSymbol state={state}/></>} active={active} aria-current={active ? 'step' : undefined} aria-label={`Question ${index + 1}, ${state === 'incorrect' ? 'incorrect answer' : state}`} onClick={() => {
     setIndex(index)
     settings.showAll = false
     document.getElementById('practice').focus({ preventScroll: true })
@@ -25,7 +28,7 @@ function QuestionsBar() {
     <div className="section-heading"><h2>Question map</h2><span>{filteredQuestions.length} visible</span></div>
     <div className="card map-card"><div className="question-grid">{filteredQuestions.map(q => <QuestionButton key={q.hash} question={q}/>)}</div>
       {!filteredQuestions.length && <p className="map-empty">Adjust your filters to see questions.</p>}
-      <div className="map-legend"><span><i className="status-dot correct"/>Correct</span><span><i className="status-dot incorrect"/>To revisit</span><span><i className="status-dot unanswered"/>Unanswered</span></div>
+      <div className="map-legend"><span><StateSymbol state="correct"/>Correct</span><span><StateSymbol state="incorrect"/>To revisit</span><span><StateSymbol state="unanswered"/>Unanswered</span></div>
     </div>
     <div className="study-tip"><Icon icon="lightbulb"/><p><strong>A little every day goes a long way.</strong>Mark tricky questions as difficult, then use filters to focus your next round.</p></div>
   </aside>
