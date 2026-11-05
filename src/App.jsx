@@ -13,7 +13,7 @@ const StudyContent = observer(() => {
   const { questions, index, filteredQuestions, settings, length, filters } = useStore()
   const value = filteredQuestions.includes(questions[index]) ? questions[index] : filteredQuestions[0]
   return <main id="practice" tabIndex={-1}>
-    <div className="section-heading"><h2>{settings.showAll ? 'All questions' : 'Practice'}</h2><span>{settings.showAll ? `${filteredQuestions.length} in this view` : 'One question at a time'}</span></div>
+    <div className="section-heading"><h1>{settings.showAll ? 'All questions' : 'Practice'}</h1><span>{settings.showAll ? `${filteredQuestions.length} in this view` : 'One question at a time'}</span></div>
     {filteredQuestions.length ? (settings.showAll ? <QuestionsAll/> : <Question value={value}/>) : <section className="card empty-state">
       <Icon icon="search" size={28}/>
       <h2>{length ? 'No questions match your filters' : 'Your next study session starts here'}</h2>
@@ -26,15 +26,10 @@ const StudyContent = observer(() => {
 function App() {
   return <div className="App">
     <a className="skip-link" href="#practice">Skip to questions</a>
-    <header className="app-header">
-      <a className="brand" href="./" aria-label="Questions home"><span className="brand-mark"><Icon icon="learning" size={23}/></span><span>Questions<span className="brand-caption">A little practice. A little progress.</span></span></a>
-      <span className="save-note"><Icon icon="saved" size={14}/> Progress saved on this device</span>
-    </header>
-    <div className="intro"><p className="eyebrow">YOUR STUDY SPACE</p><h1>Make it stick.</h1><p>Take your time, test what you know, and keep learning.</p></div>
-    <Stats/>
     <ButtonsCard/>
     <FiltersCard/>
     <div className="study-layout"><StudyContent/><QuestionsBar/></div>
+    <Stats/>
     <About/>
   </div>
 }

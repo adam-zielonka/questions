@@ -8,10 +8,10 @@ function Stats() {
   if(!all) return null
   const progress = Math.round(answered / all * 100)
   return <section className="stats-grid" aria-label="Study progress">
-    <div className="stat-progress"><div className="stat-label">Session progress <span>{progress}%</span></div><div className="stat-value">{answered}<span> / {all} answered</span></div><div className="progress-track" role="progressbar" aria-label="Questions answered" aria-valuenow={answered} aria-valuemin={0} aria-valuemax={all}><span style={{ width: `${progress}%` }}/></div></div>
-    <div className="stat"><div className="stat-label"><span className="status-dot correct"/>Correct</div><div className="stat-value">{correct}<span> questions</span></div></div>
-    <div className="stat"><div className="stat-label"><span className="status-dot incorrect"/>To revisit</div><div className="stat-value">{incorrect}<span> questions</span></div></div>
-    <div className="stat"><div className="stat-label">Accuracy</div><div className="stat-value">{answered ? `${Math.round(correct / answered * 100)}%` : '—'}<span>{answered ? ' of answered' : ' start practicing'}</span></div></div>
+    <div className="stat-progress"><div className="stat-summary"><span className="stat-label">Answered</span><span className="stat-value">{answered}<span> / {all} · {progress}%</span></span></div><div className="progress-track" role="progressbar" aria-label="Questions answered" aria-valuenow={answered} aria-valuemin={0} aria-valuemax={all}><span style={{ width: `${progress}%` }}/></div></div>
+    <div className="stat"><span className="stat-label"><span className="status-dot correct"/>Correct</span><span className="stat-value">{correct}</span></div>
+    <div className="stat"><span className="stat-label"><span className="status-dot incorrect"/>To revisit</span><span className="stat-value">{incorrect}</span></div>
+    <div className="stat"><span className="stat-label">Accuracy</span><span className="stat-value">{answered ? `${Math.round(correct / answered * 100)}%` : '—'}</span></div>
   </section>
 }
 
