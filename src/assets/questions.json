@@ -56,5 +56,1013 @@
         "value": "What do you get when you multiply six by nine?"
       }
     ]
+  },
+  {
+    "question": "Why did the developer bring glasses to the code review?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "To zoom in on the coffee"
+      },
+      {
+        "correct": true,
+        "value": "Because they couldn't C#"
+      },
+      {
+        "correct": false,
+        "value": "To make the bugs look smaller"
+      },
+      {
+        "correct": false,
+        "value": "Because the font asked nicely"
+      }
+    ]
+  },
+  {
+    "question": "Why did the computer catch a cold?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "It left its Windows open"
+      },
+      {
+        "correct": false,
+        "value": "It downloaded a woolly jumper"
+      },
+      {
+        "correct": false,
+        "value": "Its mouse sneezed"
+      },
+      {
+        "correct": false,
+        "value": "It switched to dark mode after sunset"
+      }
+    ]
+  },
+  {
+    "question": "Why does the cat sit on the keyboard?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "To finish your tax return"
+      },
+      {
+        "correct": false,
+        "value": "To improve your typing posture"
+      },
+      {
+        "correct": true,
+        "value": "To keep an eye on the mouse"
+      },
+      {
+        "correct": false,
+        "value": "To install a more professional wallpaper"
+      }
+    ]
+  },
+  {
+    "question": "What is a magician's dog called?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "A spreadsheet retriever"
+      },
+      {
+        "correct": false,
+        "value": "A bark-end developer"
+      },
+      {
+        "correct": false,
+        "value": "A very confused rabbit"
+      },
+      {
+        "correct": true,
+        "value": "A labracadabrador"
+      }
+    ]
+  },
+  {
+    "question": "Why did the calendar look nervous?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "Its days were numbered"
+      },
+      {
+        "correct": false,
+        "value": "Someone had booked lunch"
+      },
+      {
+        "correct": false,
+        "value": "Tuesday had learned to swim"
+      },
+      {
+        "correct": false,
+        "value": "It had too many pictures of beaches"
+      }
+    ]
+  },
+  {
+    "question": "Why did the scarecrow win an award?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "It replied to every email"
+      },
+      {
+        "correct": true,
+        "value": "It was outstanding in its field"
+      },
+      {
+        "correct": false,
+        "value": "It had a premium subscription"
+      },
+      {
+        "correct": false,
+        "value": "It brought its own chair"
+      }
+    ]
+  },
+  {
+    "question": "Which key does an astronaut press when the keyboard feels too crowded?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Caps Lock"
+      },
+      {
+        "correct": false,
+        "value": "The key to the rocket garage"
+      },
+      {
+        "correct": true,
+        "value": "The space bar"
+      },
+      {
+        "correct": false,
+        "value": "A spare house key"
+      }
+    ]
+  },
+  {
+    "question": "What does a ghost use for true-or-false decisions?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "A haunted toaster"
+      },
+      {
+        "correct": false,
+        "value": "A transparent spreadsheet"
+      },
+      {
+        "correct": false,
+        "value": "A very pale coin"
+      },
+      {
+        "correct": true,
+        "value": "A BOO-lean"
+      }
+    ]
+  },
+  {
+    "question": "What does a robot order at the cinema snack counter?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "Computer chips"
+      },
+      {
+        "correct": false,
+        "value": "A bucket of engine soup"
+      },
+      {
+        "correct": false,
+        "value": "A silent ringtone"
+      },
+      {
+        "correct": false,
+        "value": "A large glass of Wi-Fi"
+      }
+    ]
+  },
+  {
+    "question": "Why did the bicycle refuse another hill?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "It had a meeting with a unicycle"
+      },
+      {
+        "correct": true,
+        "value": "It was two-tired"
+      },
+      {
+        "correct": false,
+        "value": "Its bell was on holiday"
+      },
+      {
+        "correct": false,
+        "value": "The hill had not accepted cookies"
+      }
+    ]
+  },
+  {
+    "question": "What do you call a snowman in summer?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "A seasonal project manager"
+      },
+      {
+        "correct": false,
+        "value": "A refrigerated cloud"
+      },
+      {
+        "correct": true,
+        "value": "A puddle"
+      },
+      {
+        "correct": false,
+        "value": "An ice cube with career goals"
+      }
+    ]
+  },
+  {
+    "question": "Why did the skeleton avoid the argument?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "It had already read the minutes"
+      },
+      {
+        "correct": false,
+        "value": "Its calendar was full of yoga"
+      },
+      {
+        "correct": false,
+        "value": "It was waiting for a software update"
+      },
+      {
+        "correct": true,
+        "value": "It didn't have the guts"
+      }
+    ]
+  },
+  {
+    "question": "The office cat approves purchases it can nap in. Which items pass its review?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "A cardboard box"
+      },
+      {
+        "correct": true,
+        "value": "A wicker basket"
+      },
+      {
+        "correct": false,
+        "value": "A quarterly revenue spreadsheet"
+      },
+      {
+        "correct": true,
+        "value": "A soft cat bed"
+      }
+    ]
+  },
+  {
+    "question": "A wizard's form requires both a spell name and a digit. Which entries pass?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Lumos"
+      },
+      {
+        "correct": true,
+        "value": "Lumos42"
+      },
+      {
+        "correct": false,
+        "value": "123456"
+      },
+      {
+        "correct": true,
+        "value": "Accio7"
+      }
+    ]
+  },
+  {
+    "question": "A pirate fake API accepts only messages containing the exact word 'Arrr'. Which requests get aboard?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Hello, captain!"
+      },
+      {
+        "correct": true,
+        "value": "Arrr, list the treasure!"
+      },
+      {
+        "correct": false,
+        "value": "List the treasure, please."
+      },
+      {
+        "correct": true,
+        "value": "More biscuits, Arrr!"
+      }
+    ]
+  },
+  {
+    "question": "The vampire cafe serves only drinks explicitly labelled 'decaf'. Which orders let Count Snooze sleep?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "A decaf latte"
+      },
+      {
+        "correct": false,
+        "value": "An espresso with a bedtime story"
+      },
+      {
+        "correct": true,
+        "value": "A decaf cappuccino"
+      },
+      {
+        "correct": false,
+        "value": "A double espresso in pyjamas"
+      }
+    ]
+  },
+  {
+    "question": "The fake API returns: {\"status\":\"napping\",\"retryAfter\":\"one sunbeam\"}. Who is running the server?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "A punctual accountant"
+      },
+      {
+        "correct": true,
+        "value": "A cat with administrator access"
+      },
+      {
+        "correct": false,
+        "value": "A particularly energetic blender"
+      },
+      {
+        "correct": false,
+        "value": "A chair that loves meetings"
+      }
+    ]
+  },
+  {
+    "question": "Your smart fridge says, 'Door opened 37 times. Same cheese.' What feature has it developed?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Teleportation"
+      },
+      {
+        "correct": false,
+        "value": "Unlimited storage"
+      },
+      {
+        "correct": true,
+        "value": "Advanced snack judgement"
+      },
+      {
+        "correct": false,
+        "value": "A driving licence"
+      }
+    ]
+  },
+  {
+    "question": "Your printer works all week, then jams five minutes before a deadline. What is its hidden sensor?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "A moon phase detector"
+      },
+      {
+        "correct": false,
+        "value": "A cheese thermometer"
+      },
+      {
+        "correct": false,
+        "value": "A beach proximity alarm"
+      },
+      {
+        "correct": true,
+        "value": "A panic detector"
+      }
+    ]
+  },
+  {
+    "question": "A houseplant joins a video call. What is its first request?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "Can we turn this into a growing opportunity?"
+      },
+      {
+        "correct": false,
+        "value": "Can someone pass the car keys?"
+      },
+      {
+        "correct": false,
+        "value": "Can we move the meeting underwater?"
+      },
+      {
+        "correct": false,
+        "value": "Can I expense a parachute?"
+      }
+    ]
+  },
+  {
+    "question": "Your GPS sighs and says, 'At this point, follow your dreams.' What just happened?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "You unlocked the premium map"
+      },
+      {
+        "correct": true,
+        "value": "You ignored the seventh instruction in a row"
+      },
+      {
+        "correct": false,
+        "value": "You parked exactly where requested"
+      },
+      {
+        "correct": false,
+        "value": "You successfully updated the clock"
+      }
+    ]
+  },
+  {
+    "question": "Your washing machine opens a lost-and-found office. What fills the first shelf?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Matching dinner plates"
+      },
+      {
+        "correct": false,
+        "value": "Perfectly paired headphones"
+      },
+      {
+        "correct": true,
+        "value": "Single socks seeking closure"
+      },
+      {
+        "correct": false,
+        "value": "Freshly printed parking tickets"
+      }
+    ]
+  },
+  {
+    "question": "A toaster launches a motivational podcast. What is it called?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Meetings That Could Have Been Crumbs"
+      },
+      {
+        "correct": false,
+        "value": "The Quiet Life of Raw Potatoes"
+      },
+      {
+        "correct": false,
+        "value": "An Introduction to Deep Sea Wi-Fi"
+      },
+      {
+        "correct": true,
+        "value": "Rise and Shine: Believe in Your Bread"
+      }
+    ]
+  },
+  {
+    "question": "A dragon applies for a desk job. What does it list as its strongest skill?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "Warming up difficult conversations"
+      },
+      {
+        "correct": false,
+        "value": "Keeping paper documents cool"
+      },
+      {
+        "correct": false,
+        "value": "Being easy to fit into a swivel chair"
+      },
+      {
+        "correct": false,
+        "value": "Never attracting attention during a fire drill"
+      }
+    ]
+  },
+  {
+    "question": "An alarm clock has one job: make noise at 07:00. Which actions actually count as doing its job?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Posting 'rise and grind' at noon"
+      },
+      {
+        "correct": true,
+        "value": "Ringing at 07:00"
+      },
+      {
+        "correct": false,
+        "value": "Vibrating silently inside a sofa at 09:00"
+      },
+      {
+        "correct": true,
+        "value": "Playing a loud kazoo solo at 07:00"
+      }
+    ]
+  },
+  {
+    "question": "A duck's shopping list contains only things that start with 'quack'. What can the cashier scan?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Bread"
+      },
+      {
+        "correct": true,
+        "value": "Quackamole"
+      },
+      {
+        "correct": true,
+        "value": "Quackers"
+      },
+      {
+        "correct": false,
+        "value": "Ordinary crackers"
+      }
+    ]
+  },
+  {
+    "question": "A robot chef's recipe says 'add exactly two items marked BEEP'. Which ingredients belong in the bowl?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "BEEP: flour"
+      },
+      {
+        "correct": false,
+        "value": "HONK: sugar"
+      },
+      {
+        "correct": true,
+        "value": "BEEP: milk"
+      },
+      {
+        "correct": false,
+        "value": "SILENT: a mysterious sock"
+      }
+    ]
+  },
+  {
+    "question": "The penguin nightclub admits guests wearing both a bow tie and flippers. Who gets in?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "A penguin in a bow tie and flippers"
+      },
+      {
+        "correct": false,
+        "value": "A polar bear wearing only a scarf"
+      },
+      {
+        "correct": false,
+        "value": "A seal wearing only a bow tie"
+      },
+      {
+        "correct": true,
+        "value": "A rubber duck in a bow tie and tiny flippers"
+      }
+    ]
+  },
+  {
+    "question": "Your coffee machine sends an invoice for 'emotional support'. What has it noticed?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "You only use it to warm your gloves"
+      },
+      {
+        "correct": true,
+        "value": "You know its buttons better than your neighbours"
+      },
+      {
+        "correct": false,
+        "value": "You have replaced coffee with gravel"
+      },
+      {
+        "correct": false,
+        "value": "You never enter the kitchen"
+      }
+    ]
+  },
+  {
+    "question": "An elevator starts a career coaching service. What does it promise?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "An entirely horizontal journey"
+      },
+      {
+        "correct": false,
+        "value": "Guaranteed work on the ocean floor"
+      },
+      {
+        "correct": true,
+        "value": "To take you to the next level"
+      },
+      {
+        "correct": false,
+        "value": "A promotion every time you sneeze"
+      }
+    ]
+  },
+  {
+    "question": "A cloud refuses to attend an outdoor wedding. What is its excuse?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "It cannot find a parking space"
+      },
+      {
+        "correct": false,
+        "value": "Its shoes are still charging"
+      },
+      {
+        "correct": false,
+        "value": "It has misplaced its passport"
+      },
+      {
+        "correct": true,
+        "value": "It is afraid it might rain on everyone's parade"
+      }
+    ]
+  },
+  {
+    "question": "Your vacuum cleaner announces its memoir. What is the title?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "A Life Full of Crumbs"
+      },
+      {
+        "correct": false,
+        "value": "How I Learned to Bake Bread"
+      },
+      {
+        "correct": false,
+        "value": "My Peaceful Friendship with Every Cat"
+      },
+      {
+        "correct": false,
+        "value": "An Extremely Quiet Afternoon"
+      }
+    ]
+  },
+  {
+    "question": "A chair files a workplace complaint. What is its main concern?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Too much annual leave"
+      },
+      {
+        "correct": true,
+        "value": "Everyone keeps sitting on its ideas"
+      },
+      {
+        "correct": false,
+        "value": "Nobody lets it drive the forklift"
+      },
+      {
+        "correct": false,
+        "value": "Its lunch keeps walking away"
+      }
+    ]
+  },
+  {
+    "question": "A pizza delivery drone asks for directions. What destination does it prefer?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "The nearest swimming pool"
+      },
+      {
+        "correct": false,
+        "value": "An active volcano"
+      },
+      {
+        "correct": true,
+        "value": "Your current crust location"
+      },
+      {
+        "correct": false,
+        "value": "A very enthusiastic paper shredder"
+      }
+    ]
+  },
+  {
+    "question": "A mirror becomes a life coach. What is its signature advice?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Always ask the toaster first"
+      },
+      {
+        "correct": false,
+        "value": "Try living entirely underground"
+      },
+      {
+        "correct": false,
+        "value": "Your future is behind the fridge"
+      },
+      {
+        "correct": true,
+        "value": "Take a moment for self-reflection"
+      }
+    ]
+  },
+  {
+    "question": "A suitcase starts complaining at the airport. What does it say?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "I've got too much baggage to unpack right now"
+      },
+      {
+        "correct": false,
+        "value": "I wish someone would put shoes in me for once"
+      },
+      {
+        "correct": false,
+        "value": "I only travel by submarine"
+      },
+      {
+        "correct": false,
+        "value": "Please stop offering me free upgrades"
+      }
+    ]
+  },
+  {
+    "question": "The fake API serves only imaginary food. Which responses honestly describe its menu?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "A real sandwich delivered through your screen"
+      },
+      {
+        "correct": true,
+        "value": "A JSON description of invisible soup"
+      },
+      {
+        "correct": false,
+        "value": "A downloadable smell that feeds six people"
+      },
+      {
+        "correct": true,
+        "value": "A pretend pizza represented as text"
+      }
+    ]
+  },
+  {
+    "question": "A snail's delivery service promises arrival after at least seven days. Which estimates keep that promise?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "In eight minutes, unless there is lettuce"
+      },
+      {
+        "correct": true,
+        "value": "In seven days"
+      },
+      {
+        "correct": true,
+        "value": "In three weeks"
+      },
+      {
+        "correct": false,
+        "value": "Yesterday, by express leaf"
+      }
+    ]
+  },
+  {
+    "question": "A librarian dragon labels quiet rooms 'whisper' and noisy rooms 'roar'. Which signs belong on quiet rooms?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "whisper: reading nook"
+      },
+      {
+        "correct": false,
+        "value": "roar: karaoke cavern"
+      },
+      {
+        "correct": true,
+        "value": "whisper: study cave"
+      },
+      {
+        "correct": false,
+        "value": "roar: competitive saucepan practice"
+      }
+    ]
+  },
+  {
+    "question": "A detective duck follows only clues marked 'QUACK'. Which clues should go on the evidence board?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "QUACK: muddy webbed footprints"
+      },
+      {
+        "correct": false,
+        "value": "MEOW: a suspicious hairball"
+      },
+      {
+        "correct": false,
+        "value": "HONK: a stolen traffic cone"
+      },
+      {
+        "correct": true,
+        "value": "QUACK: a feather beside the pond"
+      }
+    ]
+  },
+  {
+    "question": "Your laptop fan gets a record deal. What is its debut album?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Complete Silence During Video Calls"
+      },
+      {
+        "correct": true,
+        "value": "Forty-Seven Tabs to Takeoff"
+      },
+      {
+        "correct": false,
+        "value": "Songs from a Powered-Off Calculator"
+      },
+      {
+        "correct": false,
+        "value": "Unplugged and Somehow Still Charging"
+      }
+    ]
+  },
+  {
+    "question": "An umbrella opens a dating profile. What is it looking for?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Someone who only lives underwater"
+      },
+      {
+        "correct": false,
+        "value": "A long-term relationship with a hairdryer"
+      },
+      {
+        "correct": true,
+        "value": "Someone to weather the storms with"
+      },
+      {
+        "correct": false,
+        "value": "A partner who never goes outside or opens doors"
+      }
+    ]
+  },
+  {
+    "question": "A shopping trolley becomes a tour guide. What is its signature move?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Parking neatly without being asked"
+      },
+      {
+        "correct": false,
+        "value": "Avoiding every promotional display"
+      },
+      {
+        "correct": false,
+        "value": "Rolling silently in a perfectly straight line"
+      },
+      {
+        "correct": true,
+        "value": "Pulling you towards a completely different aisle"
+      }
+    ]
+  },
+  {
+    "question": "The Wi-Fi router gets stage fright. What does it say?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "I had a connection, but now I've lost it"
+      },
+      {
+        "correct": false,
+        "value": "Please pass the mashed potatoes"
+      },
+      {
+        "correct": false,
+        "value": "I forgot how to make toast"
+      },
+      {
+        "correct": false,
+        "value": "My bicycle needs a haircut"
+      }
+    ]
+  },
+  {
+    "question": "A loading spinner hires a personal trainer. What is its fitness goal?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Learning to stand still while things load"
+      },
+      {
+        "correct": true,
+        "value": "Going in circles professionally"
+      },
+      {
+        "correct": false,
+        "value": "Growing opposable thumbs"
+      },
+      {
+        "correct": false,
+        "value": "Finishing a marathon without moving"
+      }
+    ]
+  },
+  {
+    "question": "A cookie banner opens a bakery. What is its most annoying question?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Would you like this cake in a box?"
+      },
+      {
+        "correct": false,
+        "value": "Do you prefer tea or coffee?"
+      },
+      {
+        "correct": true,
+        "value": "Will you accept all cookies before seeing the menu?"
+      },
+      {
+        "correct": false,
+        "value": "Should I warm up your croissant?"
+      }
+    ]
+  },
+  {
+    "question": "An octopus becomes an office manager. What is its favourite management phrase?",
+    "answers": [
+      {
+        "correct": false,
+        "value": "Let's keep this strictly hands-off"
+      },
+      {
+        "correct": false,
+        "value": "I can only handle one thing at a time"
+      },
+      {
+        "correct": false,
+        "value": "Please put all eight feet on the desk"
+      },
+      {
+        "correct": true,
+        "value": "All hands on deck"
+      }
+    ]
+  },
+  {
+    "question": "Your rubber duck becomes the lead developer. What is the first change?",
+    "answers": [
+      {
+        "correct": true,
+        "value": "Every bug report must be explained aloud to the duck"
+      },
+      {
+        "correct": false,
+        "value": "All keyboards are replaced with actual bread"
+      },
+      {
+        "correct": false,
+        "value": "The server room becomes a tropical rainforest"
+      },
+      {
+        "correct": false,
+        "value": "Every variable is renamed to Steve"
+      }
+    ]
   }
 ]

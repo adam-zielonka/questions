@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { act } from 'react-dom/test-utils';
+import questions from './assets/questions.json';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -23,11 +24,11 @@ it('checks answers, shows progress, and switches to a list without duplicating q
   expect([...div.querySelectorAll('input[type="checkbox"]')].every(input => input.disabled)).toBe(true);
   expect(div.querySelector('[role="progressbar"]').getAttribute('aria-valuenow')).toBe('1');
   act(() => button('All questions').click());
-  expect(div.querySelectorAll('.question-card')).toHaveLength(2);
+  expect(div.querySelectorAll('.question-card')).toHaveLength(questions.length);
   act(() => button('Practice').click());
   expect(div.querySelectorAll('.question-card')).toHaveLength(1);
   act(() => button('Filters').click());
-  act(() => button('Normal · 2').click());
+  act(() => button(`Normal · ${questions.length}`).click());
   expect(div.querySelector('.empty-state').textContent).toContain('No questions match your filters');
   expect(div.querySelectorAll('.question-number')).toHaveLength(0);
   act(() => button('Show all questions').click());

@@ -44,6 +44,11 @@ You need json file similar to this:
 You can find example file in this link:
 [question file](./src/assets/questions.json)
 
+The bundled demo uses this same file: 50 lighthearted English questions about
+space, animals, technology and everyday absurdities. Some questions have more
+than one correct answer. Import the example file to try the full set if your
+browser already has an older quiz saved (importing replaces that quiz and its progress).
+
 ## Technologies
 
 - [JS](https://developer.mozilla.org/pl/docs/Web/JavaScript)
