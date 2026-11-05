@@ -46,8 +46,11 @@ You can find example file in this link:
 
 The bundled demo uses this same file: 50 lighthearted English questions about
 space, animals, technology and everyday absurdities. Some questions have more
-than one correct answer. Import the example file to try the full set if your
-browser already has an older quiz saved (importing replaces that quiz and its progress).
+than one correct answer. Choose **Open quiz → Load demo quiz** to try the full set.
+The same menu also offers **Load from URL** (a direct HTTP/HTTPS link to a JSON
+or TXT quiz; the server must allow cross-origin requests) and **Load from file**.
+Replacing an existing quiz requires confirmation. Failed imports keep the current
+quiz and progress.
 
 ## Technologies
 
