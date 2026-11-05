@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { observer } from 'mobx-react-lite'
 import FileLoader from './FileLoader'
-import { Button, Alert, Intent } from '@blueprintjs/core'
+import { Button, ConfirmDialog } from './UI'
 import { useStore } from '../Store'
 
 export const FiltersCard = observer(() => {
@@ -33,10 +33,9 @@ function ButtonsCard() {
       <Button icon="reset" text="Reset" disabled={!length} onClick={() => setDialog('reset')}/>
       <FileLoader/>
     </div>
-    <Alert cancelButtonText="Cancel" confirmButtonText={dialog === 'reset' ? 'Reset answers' : 'Shuffle questions'} icon={dialog === 'reset' ? 'reset' : 'random'} intent={dialog === 'reset' ? Intent.DANGER : Intent.PRIMARY} isOpen={dialog !== null} onCancel={() => setDialog(null)} onConfirm={() => { dialog === 'reset' ? resetQuestions() : shuffleQuestion(); setDialog(null) }} canEscapeKeyCancel canOutsideClickCancel>
-      <h3>{dialog === 'reset' ? 'Start a fresh attempt?' : 'Change the question order?'}</h3>
+    <ConfirmDialog id="quiz-action" isOpen={dialog !== null} title={dialog === 'reset' ? 'Start a fresh attempt?' : 'Change the question order?'} confirmText={dialog === 'reset' ? 'Reset answers' : 'Shuffle questions'} intent={dialog === 'reset' ? 'danger' : 'primary'} onCancel={() => setDialog(null)} onConfirm={() => { dialog === 'reset' ? resetQuestions() : shuffleQuestion(); setDialog(null) }}>
       <p>{dialog === 'reset' ? 'Your answers and results will be cleared. Your questions and difficulty labels will stay.' : 'Questions will appear in a new, random order. Your answers and progress will stay.'}</p>
-    </Alert>
+    </ConfirmDialog>
   </div>
 }
 

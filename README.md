@@ -57,7 +57,6 @@ quiz and progress.
 - [JS](https://developer.mozilla.org/pl/docs/Web/JavaScript)
 - [React](https://reactjs.org/)
 - [Mobx](https://mobx.js.org/) & [Mobx React Lite](https://mobx-react.js.org/)
-- [Blueprint](https://blueprintjs.com/)
 
 ## Development
 

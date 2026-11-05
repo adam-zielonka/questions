@@ -79,6 +79,34 @@ it('allows cancelling replacement, then loads the full demo with fresh progress'
   expect(fetch).not.toHaveBeenCalled()
 })
 
+it('opens the last menu item with ArrowUp and closes when focus or a pointer leaves', () => {
+  const trigger = button('Open quiz')
+  act(() => { trigger.focus(); Simulate.keyDown(trigger, { key: 'ArrowUp' }) })
+  expect(document.activeElement).toBe(button('Load from file'))
+  act(() => document.body.dispatchEvent(new Event('pointerdown', { bubbles: true })))
+  expect(document.querySelector('[role="menu"]')).toBeNull()
+  click('Open quiz')
+  const outside = document.createElement('button')
+  document.body.appendChild(outside)
+  act(() => outside.focus())
+  expect(document.querySelector('[role="menu"]')).toBeNull()
+  expect(document.activeElement).toBe(outside)
+  outside.remove()
+})
+
+it('focuses the URL field, then safely transfers focus to the replacement prompt', () => {
+  click('Open quiz')
+  click('Load from URL')
+  expect(document.activeElement).toBe(document.getElementById('quiz-url'))
+  act(() => Simulate.change(document.getElementById('quiz-url'), { target: { value: 'https://example.com/quiz.json' } }))
+  act(() => Simulate.submit(document.querySelector('.quiz-url-dialog form')))
+  expect(document.querySelectorAll('dialog')).toHaveLength(1)
+  expect(document.activeElement).toBe(button('Keep current quiz'))
+  click('Keep current quiz')
+  expect(document.activeElement).toBe(button('Open quiz'))
+  expect(document.body.style.overflow).toBe('')
+})
+
 it('waits for confirmation and a successful URL response before replacing progress', async () => {
   let resolveRequest
   fetch.mockImplementation(() => new Promise(resolve => { resolveRequest = resolve }))
@@ -137,7 +165,7 @@ it('opens the file picker and keeps file import behind replacement confirmation'
   expect(openPicker).toHaveBeenCalledOnce()
   act(() => Simulate.change(input, { target: { files: [file], value: 'local.json' } }))
   expect(file.text).not.toHaveBeenCalled()
-  expect(document.querySelector('.bp3-alert').textContent).toContain('local.json')
+  expect(document.querySelector('[role="alertdialog"]').textContent).toContain('local.json')
   await act(async () => button('Open new quiz').click())
   expect(context.store.questions[0].question).toBe('A new quiz')
   expect(root.querySelector('[role="status"]').textContent).toContain('Loaded local.json')

@@ -1,6 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { Button, Icon } from '@blueprintjs/core'
+import { Button, Icon } from './UI'
 import { isCorrect } from '../utils/Utils'
 import { useStore } from '../Store'
 

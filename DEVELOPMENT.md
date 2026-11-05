@@ -20,5 +20,6 @@ new deployments no longer promise offline caching.
 
 The `parser/` application is a separate package: run its install, tests and
 build from that directory as well. MobX 5 uses explicit annotations instead of
-legacy decorator syntax. Blueprint 3 CSS is retained without CSS minification
-because its legacy selectors are rejected by the newer strict minifier.
+legacy decorator syntax. UI controls use native HTML elements, local styles and
+inline SVG icons. Confirmation and import dialogs use the native `<dialog>`
+element for modal focus and background isolation. CSS uses Vite’s default minifier.

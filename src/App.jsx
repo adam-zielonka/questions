@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStore } from './Store'
 import { observer } from 'mobx-react-lite'
-import { Button, Icon } from '@blueprintjs/core'
+import { Button, Icon } from './components/UI'
 import Question from './components/Question'
 import Stats from './components/Stats'
 import QuestionsBar from './components/QuestionsBar'

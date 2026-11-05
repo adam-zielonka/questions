@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { observer } from 'mobx-react-lite'
-import { Button, Icon } from '@blueprintjs/core'
+import { Button, Icon } from './UI'
 import Card from './Card'
 import { isCorrect } from '../utils/Utils'
 import { useStore } from '../Store'
