@@ -1,6 +1,87 @@
-@import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-@import '@blueprintjs/core/lib/css/blueprint.css';
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #233047;
+  background: #f3f6fa;
+  font-synthesis: none;
+  line-height: 1.5;
+}
 
-img {
-  max-width: 500px;
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, textarea { font: inherit; }
+
+.app {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+h1, h2, h3, p { margin: 0 0 16px; }
+h1 { color: #16233b; font-size: 2rem; letter-spacing: -.03em; }
+h2 { font-size: 1.2rem; }
+h3 { color: #526078; font-size: .9rem; }
+.app-header { margin-bottom: 28px; }
+.app-header p, .empty-state { color: #526078; }
+
+.source-panel, .question-card {
+  padding: 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px #16233b08;
+}
+
+.source-panel > label { display: block; margin-bottom: 8px; font-weight: 600; }
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 160px;
+  padding: 12px;
+  border: 1px solid #78879e;
+  border-radius: 6px;
+  color: #233047;
+  background: #fff;
+  resize: vertical;
+}
+textarea::placeholder { color: #64748b; }
+textarea:focus-visible, button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 1px solid #78879e;
+  border-radius: 6px;
+  background: #fff;
+  color: #233047;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button:hover { background: #edf2f7; }
+.button-primary { color: #fff; background: #1d4ed8; border-color: #1d4ed8; }
+.button-primary:hover { background: #1e40af; }
+.button:disabled { color: #526078; background: #edf2f7; cursor: wait; }
+.icon { width: 20px; height: 20px; flex: none; }
+.file-error { flex-basis: 100%; margin: 0; color: #b42318; }
+.questions { margin-top: 32px; }
+.question-card { margin-top: 16px; overflow-wrap: anywhere; }
+.question-content { overflow-x: auto; margin-bottom: 20px; }
+.question-content img { max-width: min(100%, 500px); height: auto; }
+.answers { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.answer { border: 1px solid #d9e1eb; border-radius: 6px; background: #f8fafc; }
+.answer label { display: flex; align-items: baseline; gap: 10px; padding: 12px; }
+.answer input { flex: none; margin: 0; accent-color: #166534; }
+.answer-text { flex: 1; min-width: 0; white-space: pre-wrap; }
+.answer-status { flex: none; font-size: .8rem; color: #526078; }
+.answer-correct { border-color: #86c9a2; background: #e8f7ee; }
+.answer-correct .answer-status { color: #166534; font-weight: 600; }
+
+@media (max-width: 540px) {
+  .app { padding: 24px 16px 40px; }
+  .source-panel, .question-card { padding: 16px; }
+  .answer label { flex-wrap: wrap; }
+  .answer-status { flex-basis: 100%; padding-left: 23px; }
 }
