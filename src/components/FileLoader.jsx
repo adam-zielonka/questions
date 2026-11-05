@@ -4,7 +4,7 @@ import { Button, ConfirmDialog, Icon, Modal } from './UI'
 import { useStore } from '../Store'
 import demoQuestions from '../assets/questions.json'
 
-function FileLoader() {
+function FileLoader({ children }) {
   const { loadQuestions, length } = useStore()
   const loader = useRef(null)
   const input = useRef(null)
@@ -109,27 +109,30 @@ function FileLoader() {
   }
 
   return <>
-    <input ref={input} className="visually-hidden" type="file" accept=".json,.txt,application/json,text/plain" tabIndex={-1} aria-label="Choose a quiz file" onChange={event => {
-      const file = event.target.files[0]
-      event.target.value = ''
-      if(file) requestImport({ type: 'file', file, name: file.name })
-    }}/>
-    <div className="quiz-loader" ref={loader}>
-      <Button ref={trigger} icon="folder-open" rightIcon="caret-down" text="Open quiz" intent="primary" loading={loading} aria-haspopup="menu" aria-expanded={menuOpen} aria-controls={menuOpen ? 'quiz-source-menu' : undefined} onClick={() => {
-        firstMenuItem.current = 0
-        setMenuOpen(!menuOpen)
-      }} onKeyDown={event => {
-        if(event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-          event.preventDefault()
-          firstMenuItem.current = event.key === 'ArrowUp' ? 2 : 0
-          setMenuOpen(true)
-        }
+    <div className="toolbar-actions">
+      {children}
+      <input ref={input} className="visually-hidden" type="file" accept=".json,.txt,application/json,text/plain" tabIndex={-1} aria-label="Choose a quiz file" onChange={event => {
+        const file = event.target.files[0]
+        event.target.value = ''
+        if(file) requestImport({ type: 'file', file, name: file.name })
       }}/>
-      {menuOpen && <ul id="quiz-source-menu" className="quiz-source-menu" ref={menu} role="menu" aria-label="Quiz source" onKeyDown={navigateMenu}>
-        <li role="none"><button type="button" role="menuitem" tabIndex={-1} onClick={() => requestImport({ type: 'demo', name: 'the 50-question demo quiz' })}><Icon icon="learning"/>Load demo quiz</button></li>
-        <li role="none"><button type="button" role="menuitem" tabIndex={-1} onClick={() => { closeMenu(); setUrlError(null); setUrlDialogOpen(true) }}><Icon icon="link"/>Load from URL</button></li>
-        <li role="none"><button type="button" role="menuitem" tabIndex={-1} onClick={() => { closeMenu(); input.current.click() }}><Icon icon="folder-open"/>Load from file</button></li>
-      </ul>}
+      <div className="quiz-loader" ref={loader}>
+        <Button ref={trigger} icon="folder-open" rightIcon="caret-down" text="Open quiz" intent="primary" loading={loading} aria-haspopup="menu" aria-expanded={menuOpen} aria-controls={menuOpen ? 'quiz-source-menu' : undefined} onClick={() => {
+          firstMenuItem.current = 0
+          setMenuOpen(!menuOpen)
+        }} onKeyDown={event => {
+          if(event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+            event.preventDefault()
+            firstMenuItem.current = event.key === 'ArrowUp' ? 2 : 0
+            setMenuOpen(true)
+          }
+        }}/>
+        {menuOpen && <ul id="quiz-source-menu" className="quiz-source-menu" ref={menu} role="menu" aria-label="Quiz source" onKeyDown={navigateMenu}>
+          <li role="none"><button type="button" role="menuitem" tabIndex={-1} onClick={() => requestImport({ type: 'demo', name: 'the 50-question demo quiz' })}><Icon icon="learning"/>Load demo quiz</button></li>
+          <li role="none"><button type="button" role="menuitem" tabIndex={-1} onClick={() => { closeMenu(); setUrlError(null); setUrlDialogOpen(true) }}><Icon icon="link"/>Load from URL</button></li>
+          <li role="none"><button type="button" role="menuitem" tabIndex={-1} onClick={() => { closeMenu(); input.current.click() }}><Icon icon="folder-open"/>Load from file</button></li>
+        </ul>}
+      </div>
     </div>
     {loading && <div className="import-message" role="status">Loading quiz…</div>}
     {message && <div className={`import-message ${message.error ? 'is-error' : ''}`} role={message.error ? 'alert' : 'status'}><span>{message.text}</span><Button minimal icon="cross" aria-label="Dismiss import message" onClick={() => setMessage(null)}/></div>}

@@ -27,12 +27,11 @@ function ButtonsCard() {
       <Button icon="learning" text="Practice" active={!settings.showAll} aria-pressed={!settings.showAll} onClick={() => settings.showAll = false}/>
       <Button icon="list" text="All questions" active={settings.showAll} aria-pressed={settings.showAll} onClick={() => settings.showAll = true}/>
     </div>
-    <div className="toolbar-actions">
+    <FileLoader>
       <Button icon="filter" text={filtered ? 'Filters · active' : 'Filters'} active={filters.buttons} aria-expanded={filters.buttons} aria-controls="question-filters" onClick={setFilters}/>
       <Button icon="random" text="Shuffle" disabled={length < 2} onClick={() => setDialog('shuffle')}/>
       <Button icon="reset" text="Reset" disabled={!length} onClick={() => setDialog('reset')}/>
-      <FileLoader/>
-    </div>
+    </FileLoader>
     <ConfirmDialog id="quiz-action" isOpen={dialog !== null} title={dialog === 'reset' ? 'Start a fresh attempt?' : 'Change the question order?'} confirmText={dialog === 'reset' ? 'Reset answers' : 'Shuffle questions'} intent={dialog === 'reset' ? 'danger' : 'primary'} onCancel={() => setDialog(null)} onConfirm={() => { dialog === 'reset' ? resetQuestions() : shuffleQuestion(); setDialog(null) }}>
       <p>{dialog === 'reset' ? 'Your answers and results will be cleared. Your questions and difficulty labels will stay.' : 'Questions will appear in a new, random order. Your answers and progress will stay.'}</p>
     </ConfirmDialog>
